@@ -12,6 +12,7 @@ const mongoose = require('mongoose');
 // Usually you will retrieve data from the database through the Model object
 let CatModel = {};
 
+
 /* While Mongo is a schema-less database, meaning we can just store arbitrary objects in it,
    Mongoose does implement a schema system. If you wanted to just store arbitrary objects you
    could just use the mongoDB NodeJS driver: https://www.npmjs.com/package/mongodb
@@ -54,12 +55,14 @@ const CatSchema = new mongoose.Schema({
     required: true,
   },
 
-  createdDate: {
-    type: Date,
-    default: Date.now,
-  },
+createdDate: {
+  type: Date,
+  default: Date.now,
+},
 
 });
+
+
 // Create the cat model based on the schema. You provide it with a custom discriminator
 // (the name of the object type. Can be anything)
 // and the schema to make a model from.
